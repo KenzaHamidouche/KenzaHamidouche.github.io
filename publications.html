@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--
+ - File              : index.html
+ - Author            : Kenza Hamidouche <kenzah@princeton.edu>
+ - Last Modified Date: Nov 19 2019 
+-->
+<html lang="en">
+    <script>
+    function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      /* Loop through a collection of all HTML elements: */
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+          /* Make an HTTP request using the attribute value as the file name: */
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4) {
+              if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+              if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+              /* Remove the attribute, and call this function once more: */
+              elmnt.removeAttribute("w3-include-html");
+              includeHTML();
+            }
+          }
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /* Exit the function: */
+          return;
+        }
+      }
+    }
+    </script>
+    <script src="jquery.min.js"></script>
+    <script src="bib-list-min.js"></script>
+    
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Página personal Marcos Horro - Grupo de Arquitectura de Computadores (GAC)">
+    <meta name="author" content="Grupo de Arquitectura de Computadores">
+    <title>Kenza Hamidouche</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/custom.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  </head>
+ 
+  <body>
+    <!-- header -->
+
+
+    <!--<header>-->
+    <header class="site-header px2 px-responsive">    
+        
+        <div id="middlepage" class="post p2 p-responsive wrap" role="main">
+            <div class="measure">
+                
+      <!-- Fixed navbar -->
+     <div w3-include-html="nav.html"></div>
+    </header>
+
+    <!-- Begin page content -->
+    <main role="main" class="container">
+        <section id="teach" class="mt-5">
+          <h3 class="display-5"> <span class="badge badge-secondary">Book Chapters</span></h3>
+          <hr>
+          <ul class="clist">
+              <li><b>K. Hamidouche</b>, W. Saad, M. Debbah, <i>"Distributed Caching in C-RAN"</i>, Cloud Access Networks, Cambridge University Press, March 2017.</li>
+          </ul>
+        </section>
+        <section id="teach" class="mt-5">
+          <h3 class="display-5"> <span class="badge badge-danger">Journals</span></h3>
+          <hr>
+          <ul class="clist">
+              <li><b>K. Hamidouche</b>, W. Saad, M. Debbah,M. T. Thai, Z. Han, <i>"Contract-based Incentive Mechanism for LTE over Unlicensed Channels"</i>,  IEEE Transactions on Communications, to appear, 2019. </li>
+              <li><b>K. Hamidouche</b>, W. Saad, M. Debbah, J. B Song, C. S. Hong, <i>"The 5G Cellular Backhaul Management Dilemma: To Cache or to Serve"</i>, IEEE Transactions on Wireless Communications, vol. 16, no. 8, pp. 4866 - 4879, July 2017. </li>
+              <li><b>K. Hamidouche</b>, W. Saad, M. Debbah, <i>"A Multi-Game Framework for Harmonized LTE-U and WiFi Coexistence over Unlicensed Bands"</i>, IEEE Wireless Communications Magazine, Special Issue on LTE in Unlicensed Spectrum, vol. 23, no. 6, pp. 62-69, 2016.</li>
+          </ul>
+        </section>
+
+        <section id="teach" class="mt-5">
+          <h3 class="display-5"> <span class="badge badge-success">Conference proceedings</span></h3> 
+          <hr>
+          <ul class="crlist">
+              <li>M. Yousefvand, <b>K. Hamidouche</b>, N. B. Mandayam, <i>"Learning-based Resource Optimization in Ultra Reliable Low Latency HetNets"</i>, IEEE Global Communications Conference, Puako, HI, USA, 2019.</li>    
+              <li>A Nooraiepour, <b>K. Hamidouche</b>, W. U. Bajwa, N. Mandayam, <i>"How Secure are Multicarrier Communication Systems Against Signal Exploitation Attacks?"</i>, IEEE Military Communications Conference (MILCOM), Los Angeles, CA, 2018.
+              <li><b>K. Hamidouche</b>, A. Talebzadeh Kasgari, W. Saad, M. Bennis, M. Debbah, <i>"Collaborative Artificial Intelligence (AI) for User-Cell Association in Ultra-Dense Cellular Systems"</i>, International Conference on Communications (ICC), Kansas City, USA, 2018. </li>
+              <li><b>K. Hamidouche</b>, W. Saad, M. Debbah, <i>"Popular Matching Games for Correlation-aware Resource Allocation in the Internet of Things"</i>,  Global Communications Conference (Globecom), Singapore, 2017. </li>
+              <li><b>K. Hamidouche</b>, W. Saad, M. Debbah, <i>"Minority Games for Backhaul Management in Cache-Enabled Small Cell Networks"</i>, European Wireless, Workshop on Competitive and Cooperative Approached for 5G Networks, Dresden, Germany, 2017. </li>
+              <li><b>K. Hamidouche</b>, W. Saad, M. Debbah, <i>"Multi-Games for LTE and WiFi Coexistence over Unlicensed Channels"</i>, International conference on Network Games, Control and Optimization, Avignon, France, 2016.  </li>
+              <li><b>K. Hamidouche</b>, W. Saad, M. Debbah, <i>"Breaking the Economic Barrier of Caching in Cellular Networks: Incentives and Contracts"</i>, IEEE Global Communications Conference, Washington, DC, USA, 2016. </li>
+              <li>F. Shen, <b>K. Hamidouche</b>, E. Baştuğ, M. Debbah, <i>"A Stackelberg Game for Incentive Proactive Caching Mechanisms in Wireless Networks"</i>, IEEE Global Communications Conference, Washington, DC, USA, 2016. </li>
+              <li><b>K. Hamidouche</b>, W. Saad, M. Debbah, V. H. Poor, <i>"Mean-Field Games for Distributed Caching in Ultra-Dense Small Cell Networks"</i>, American Control Conference, Boston, USA, 2016.</li>
+              <li>A. Abboud, E. Baştuğ, <b>K. Hamidouche</b>, M. Debbah, <i>"Distributed Caching in 5G Networks: An Alternating Direction Method of Multipliers Approach"</i>, The 6th IEEE International Workshop on Signal Processing Advances in Wireless Communications, Stockholm, Sweden, June 2015. </li>
+              <li><b>K. Hamidouche</b>, W. Saad, and M. Debbah, <i>"Many-to-Many Matching Games for Proactive Social-Caching in Wireless Small Cell Networks"</i>, WNC3 workshop, WiOpt, Hammamet, Tunisia, 2014. </li>
+          </ul>
+        </section>
+        <section id="teach" class="mt-5">
+          <h3 class="display-5">Others</h3>
+          <hr>
+          <h4> <span class="badge badge-primary">Workshops and Talks</span></h4> 
+          <ul class="crlist">
+              <li><b>K. Hamidouche</b>, W. Saad, M. Debbah, <i>"Distributed Caching in Dense Small Cell Networks"</i>, IEEE Communication Theory Workshop, Dana Point, CA, USA, May 2015.  </li>
+              <li>E. Baştuğ, <b>K. Hamidouche</b>, W. Saad, and M. Debbah, <i>"Centrality-Based Caching for Mobile Wireless Networks"</i>, 1st KuVS Workshop on Anticipatory Networks, Stuttgart, Germany, September 2014.</li>
+          </ul>
+            <h4> <span class="badge badge-info">National Journals</span></h4>
+          <ul class="clist">
+              <li><b>K. Hamidouche</b>, E. Baştuğ, M. Bennis, and M. Debbah, <i>"Le caching proactif dans les réseaux cellulaires 5G"</i>, La Revue de l'Electricité et de l'Electronique (REE), vol. 2014-4, 2014. </li>
+          </ul>
+          <h4> <span class="badge badge-secondary">PhD Thesis and Slides</span></h4> 
+          <ul class="crlist">
+            <li><a href="https://theses.eurasip.org/theses/705/game-theoretic-approach-for-resource-allocation/download/">Thesis manuscript</a>, December 2, 2016, CentraleSupélec, Gif-sur-Yvette, France.</li>
+            <li><a href="http://laneas.com/sites/default/files/attachments-4223/presentation.pdf?_ga=2.203734288.1250039677.1574220404-536670331.1574220404">Thesis slides</a>, December 2, 2016, CentraleSupélec, Gif-sur-Yvette, France.</li>  
+          </ul>
+        </section>
+        
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-slim.min.js"><\/script>')</script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bibtex.js"></script>
+<script type="text/javascript">
+ var init = function() {
+   bibtexify("#bibtex", "pubTable", {});
+ };
+ if (window.addEventListener) {
+   window.addEventListener('load', init, false);
+ } else if (window.attachEvent) {
+   window.attachEvent('onload', init);
+ }
+</script>
+<script>
+jQuery("#pubTable").on("click", "a", function(e) {
+  var $n = jQuery(this),
+      text = $n.text().toUpperCase();
+  if (text === "X") { return; }
+  try {
+    _gaq.push(['_trackEvent', "PublicationAction", text]);
+} catch(err){ }
+  if ($n.attr("href") !== "#") {
+    setTimeout(function() {
+      document.location.href = $n.attr("href");
+    }, 100);
+    return false;
+  }
+});
+</script>
+<script>
+        includeHTML();
+</script>
+
+  </body>
+</html>

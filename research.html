@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--
+ - File              : index.html
+ - Author            : Kenza Hamidouche <kenzah@princeton.edu>
+ - Last Modified Date: Nov 19 2019 
+-->
+<html lang="en">
+    <script>
+    function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      /* Loop through a collection of all HTML elements: */
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+          /* Make an HTTP request using the attribute value as the file name: */
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4) {
+              if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+              if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+              /* Remove the attribute, and call this function once more: */
+              elmnt.removeAttribute("w3-include-html");
+              includeHTML();
+            }
+          }
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /* Exit the function: */
+          return;
+        }
+      }
+    }
+    </script>
+    
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Página personal Marcos Horro - Grupo de Arquitectura de Computadores (GAC)">
+    <meta name="author" content="Grupo de Arquitectura de Computadores">
+    <title>Kenza Hamidouche</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/custom.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  </head>
+ 
+  <body>
+    <!-- header -->
+
+
+    <!--<header>-->
+    <header class="site-header px2 px-responsive">    
+        
+        <div id="middlepage" class="post p2 p-responsive wrap" role="main">
+            <div class="measure">
+                
+      <!-- Fixed navbar -->
+     <div w3-include-html="nav.html"></div>
+    </header>
+
+    <!-- Begin page content -->
+    <main role="main" class="container">
+
+        <section id="projects" class="mt-5">
+          <h3 class="display-5">Conference Organization</h3><hr>
+          <ul class="timelinelist">
+            <li><a href="https://spawc2020.netlify.com/">IEEE International Workshop on Signal Processing Advances in Wireless Communications (SPAWC)</a>, Special Session on Distributed Learning for Wireless Communications, May 26-29th, 2020, Atlanta, GA, USA <span class="badge badge-info">special session</span> - Session co-chair.</li>
+            <li><a href="https://wmnc.dnac.org/index.php">IFIP Wireless and Mobile Networking Conference 2019</a>, September 11-13th, 2019, Paris, France <span class="badge badge-success">conference</span> - Publicity chair.</li>
+            <li> <a href="https://globecom2017.ieee-globecom.org/index.html">IEEE Globecom Workshop on Virtual reality</a>, December 4-8th, 2017, Singapore <span class="badge badge-primary">Workshop</span> - Co-chair.</li>
+            <li><a href="https://icc2017.ieee-icc.org/index.html">IEEE Internation Conference on Communications 2017</a>, May 21-25th, 2017, Paris, France <span class="badge badge-success">conference</span> - Student Volunteers co-chair.</li>
+          </ul>
+        </section>
+          
+        <section id="projects" class="mt-5">
+          <h3 class="display-5">Technical Program Committee Membership</h3><hr>
+          <ul class="timelinelist">
+            <li><a href="https://icc2020.ieee-icc.org/workshop/ws-14-workshop-edge-machine-learning-5g-mobile-networks-and-beyond">Workshop on Edge Machine Learning for 5G Mobile Networks and Beyond</a> - June 7-11th, 2020, Dublin, Ireland <span class="badge badge-primary">Workshop</span></li>
+            <li><a href="http://icacci-conference.org/2018/wci-home"> Women in Computing and Informatics </a>, September 19-22nd, 2018, Bangalore, India <span class="badge badge-success">conference</span></li>
+            <li><a href="http://www.acn-conference.org/sirs2017/">International Symposium on Signal Processing and Intelligent Recognition Systems </a>, September 13-16th, 2017, Karnataka, India <span class="badge badge-pill badge-success">conference</span></li>
+            <li><a href="https://icc2017.ieee-icc.org/">IEEE International Conference on Communications - Cognitive Radio Networks </a>, June 21-25th, 2017, Paris, France <span class="badge badge-success">conference</span></li>
+            <li><a href="http://www.unet-conf.org/UNet2016/">International Symposium on Ubiquitous Networking </a>, May 30-June 1st, 2016, Casablanca, Morocco <span class="badge badge-pill badge-success">conference</span></li>
+            <li><a href="http://archive.gamenets.org/2016/show/home">EAI International Conference on Game Theory for Networks </a>, May 11-12th, 2016, Kelowna, BC, Canada <span class="badge badge-pill badge-success">conference</span></li>
+            <li><a href="http://www.cwc.oulu.fi/smallnets2015/">IEEE ICC 2015 International Workshop on Small Cell and 5G Networks (SmallNets)</a>, June 8-12nd 2015, London, UK <span class="badge badge-primary">workshop</span></li>
+              <li><a href="https://www.itsoc.org/conferences/submit/globalsip-2014-ieee-global-conference-on-signal-and-information-processing">IEEE Global Conference on Signal and Information Processing (GlobalSIP)</a>, December 3-5th 2014, Atlanta, GA, USA <span class="badge badge-success">conference</span></li>
+          </ul>
+        </section>
+          
+
+        <section id="teach" class="mt-5">
+          <h3 class="display-5">Article Reviews</h3>
+          <hr>
+          <h4>Conference proceedings <span class="badge badge-success">2014-2020</span></h4>
+          <ul class="crlist">
+            <li>IEEE Conference in Communications </li>
+            <li>IEEE Global Communications Conference </li>
+            <li>American Control Conference </li>  
+            <li>IEEE Wireless Communications and Networking Conference </li>
+            <li>IEEE International Symposium on Modeling and Optimization in Mobile, Ad Hoc and Wireless Networks  </li>
+            <li>Conference on Decision and Control</li>
+            <li>IEEE International Symposium on Personal, Indoor and Mobile Radio Communications</li>
+          </ul>
+            <h4>Journals <span class="badge badge-danger">2014-2020</span></h4>
+          <ul class="clist">
+            <li><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=26">IEEE Transactions on Communications</a> </li>
+            <li><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=7693">IEEE Transactions on Wireless Communications</a></li>
+            <li><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=49">IEEE Journal on Selected Areas in Communications</a></li>
+            <li><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=9">IEEE Transactions on Automatic Control</a></li>
+            <li><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4200690">IEEE Journal of Selected Topics in Signal Processing</a></li>
+            <li><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=35">IEEE Communications Magazine</a></li>
+            <li><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4234">IEEE Communications Letters</a></li>
+          </ul>
+        </section>
+       <section id="projects" class="mt-5">
+          <h3 class="display-5">Co-supervised Students</h3><hr>
+          <ul class="crlist">
+            <li>Prerit Terway, Electrical Engineering, Princeton University, 2019 <span class="badge badge-pill badge-secondary">graduate student</span></li>
+            <li>Sunny Yoo, Computer Science, New York University, 2019 <span class="badge badge-pill badge-info">undergrad student</span></li>
+            <li>Alireza Nooraiepour , Winlab, Rutgers University, 2018 <span class="badge badge-pill badge-secondary">graduate student</span></li>
+             <li>Abderrahmane Tchikou , LANEAS, CentraleSupélec, 2017 <span class="badge badge-pill badge-secondary">master student</span></li> 
+          </ul>
+        </section>
+          
+        <br>
+      </div>
+    </div>
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-slim.min.js"><\/script>')</script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bibtex.js"></script>
+<script type="text/javascript">
+ var init = function() {
+   bibtexify("#bibtex", "pubTable", {});
+ };
+ if (window.addEventListener) {
+   window.addEventListener('load', init, false);
+ } else if (window.attachEvent) {
+   window.attachEvent('onload', init);
+ }
+</script>
+<script>
+jQuery("#pubTable").on("click", "a", function(e) {
+  var $n = jQuery(this),
+      text = $n.text().toUpperCase();
+  if (text === "X") { return; }
+  try {
+    _gaq.push(['_trackEvent', "PublicationAction", text]);
+} catch(err){ }
+  if ($n.attr("href") !== "#") {
+    setTimeout(function() {
+      document.location.href = $n.attr("href");
+    }, 100);
+    return false;
+  }
+});
+</script>
+<script>
+        includeHTML();
+</script>
+
+  </body>
+</html>

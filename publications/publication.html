@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!--
+ - File              : index.html
+ - Author            : Kenza Hamidouche <kenzah@princeton.edu>
+ - Last Modified Date: Nov 19 2019 
+-->
+<html lang="en">
+    <script>
+    function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      /* Loop through a collection of all HTML elements: */
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+          /* Make an HTTP request using the attribute value as the file name: */
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4) {
+              if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+              if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+              /* Remove the attribute, and call this function once more: */
+              elmnt.removeAttribute("w3-include-html");
+              includeHTML();
+            }
+          }
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /* Exit the function: */
+          return;
+        }
+      }
+    }
+    </script>
+    
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Página personal Marcos Horro - Grupo de Arquitectura de Computadores (GAC)">
+    <meta name="author" content="Grupo de Arquitectura de Computadores">
+    <title>Kenza Hamidouche</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/custom.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  </head>
+ 
+  <body>
+    <!-- header -->
+
+
+    <!--<header>-->
+    <header class="site-header px2 px-responsive">    
+        
+        <div id="middlepage" class="post p2 p-responsive wrap" role="main">
+            <div class="measure">
+                
+      <!-- Fixed navbar -->
+     <div w3-include-html="nav.html"></div>
+    </header>
+
+    <!-- Begin page content -->
+    <main role="main" class="container">
+    <div class="row">
+      <div class="col-4 mx-auto d-block">
+        <div class="row mt-5 mx-auto d-block text-center">
+          <img src="img/kenza_id_photo.jpg" class="img-fluid rounded-circle mb-3" alt="Profile picture">
+          <h4>Kenza Hamidouche</h4>
+          <p class="lead">PostDoc Researcher</p>
+          <p class="font-weight-light"><a href="https://orfe.princeton.edu"<abbr title="Operations Research and Financial Engineering">ORFE</abbr></a>, Princeton University<br></p>
+        </div>
+        <hr>
+        <div class="row mx-auto d-block">
+        <p class="lead text-center "><a href="mailto:kenzah@princeton.edu"><i class="far fa-envelope"></i></a> kenzah [at] princeton.edu</p>
+        <ul class="social-icons text-center">
+          	<li><a class="scholar" href="https://scholar.google.fr/citations?user=_XjUgEcAAAAJ&hl=fr" title="Scholar">Scholar</a></li>
+          	<li><a class="linkedin" href="https://www.linkedin.com/in/kenza-hamidouche-33589740/" title="Linkedin">LinkedIn</a></li>
+          	<li><a class="twitter" href="https://twitter.com/KenzaHamidouche" title="Twitter">Twitter</a></li>
+        </ul>
+        <hr>
+        <p class="text-center text-monospace"><b>Office: </b>Sherrerd Hall 113<br>
+        </p>
+        <p class="text-center text-monospace"><b>Phone: </b>609-258-5373<br>
+        </p>
+        <hr>
+        <p class="text-center"> If you are a human, please feel free to contact me.<br>
+        </p>
+        <hr>
+        <!--  <p class="text-center font-weight-light">
+        <i class="far fa-futbol"></i>Tennis and <i class="fas fa-motorcycle"></i>Piano<br>
+        </p>
+        <hr>-->
+      </div>
+      </div>
+      <div class="col-8">
+          <section id="aboutme" class="mt-5">
+          <h3 class="display-5">About me</h3><hr>
+          <ul class="timelinelist">
+              <p>I am a post-doctoral researcher at <a href="https://orfe.princeton.edu"<abbr title="Operations Research and Financial Engineering">ORFE</abbr></a>, Princeton University working on multi-agent reinforcement learning with <a href="https://castlelab.princeton.edu/">Prof. Warren Powell</a>. I am also a part-time Data Scientist at Neutigers. Prior to that, I obtained a PhD in telecommunications from <a href="https://www.centralesupelec.fr/">CentraleSupélec</a> under the supervision of <a href="http://www.laneas.com/merouane-debbah">Prof. Mérouane Debbah</a> and <a href="http://resume.walid-saad.com/">Prof. Walid Saad</a>. During my PhD, I worked on the application of game theory and machine learning for resource allocation in 5G networks. I received bachelor's and master's degrees in computer science from the <a href="https://www.esi.dz/">Ecole Nationale Supérieure d'Informatique</a> and the <a href="https://www.univ-rennes1.fr/">University of Rennes 1</a>, respectively. In 2015, I was a visiting scholar at <a href="http://www.netsciwis.com/">Virginia Tech</a> .</p> 
+                  
+              <p>My research interests are in the broad areas of game theory, distributed learning, mechanism design, learning under uncertainty and reinforcement learning. Applications of particular interest include wireles communications, network dynamics and control, pricing, autonomous multi-agent systems, security and privacy.</p>
+            
+          </ul>
+        </section>
+        <section id="projects" class="mt-5">
+          <h3 class="display-5">News</h3><hr>
+          <ul class="timelinelist">
+            <li><a href="https://github.com/markoshorro/gem5McPATparse">gem5McPATparse</a> <span class="badge badge-primary">Flex, Bison, C++</span> - translates the output of gem5 to McPAT format</li>
+            <li><a href="https://github.com/markoshorro/gem5-spm">gem5-spm</a> <span class="badge badge-info">C++, Python</span> - implementation of scratchpad memories in gem5 simulator</li>
+            <li><a href="https://bitbucket.org/markoshorro/iconmunicate/src/master/">iConmunicate</a> <span class="badge badge-pill badge-danger">Discontinued</span> <span class="badge badge-success">Android, Nearby, BT</span> - messenger over bluetooth having a gallery of icons</li>
+            <li><a href="https://github.com/markoshorro/look-around">Look Around</a> <span class="badge badge-pill badge-danger">Discontinued</span> <span class="badge badge-success">Android, sensors, Unity, VR</span> - reading QR retrieves information of places of interest, allowing to visualize it using virtual reality through the camera</li>
+            <li><a href="https://github.com/markoshorro/musicsort">MusicSort</a> <span class="badge badge-pill badge-danger">Discontinued</span> <span class="badge badge-info">Python, Django, APIs</span> - retrivies all the information of a set of songs uploaded, such as metadata, album cover, lyrics, etc.</li>
+          </ul>
+        </section>
+
+        <section id="teach" class="mt-5">
+          <h3 class="display-5">Teaching</h3>
+          <hr>
+          <h4>Course <span class="badge badge-secondary">2018/2019</span></h4>
+          <ul class="clist">
+            <li>Programación Integrativa <a
+href="https://guiadocente.udc.es/guia_docent/index.php?centre=614&ensenyament=614G01&assignatura=614G01049&idioma=cast&any_academic=2018_19"
+class="badge badge-info">Planning</a> <a href="https://moodle.udc.es/course/view.php?id=51658" class="badge
+badge-primary">Moodle</a>
+</li>
+          </ul>
+        </section>
+        <section id="pubs" class="mt-5">
+          <h3 class="display-5">Publications</h3>
+          <hr>
+          <table id="pubTable" class="display"></table>
+<pre id="bibtex">
+@misc{horrostudy,
+  title={Study of the Intel Knights Landing (KNL) memory system tradeoffs},
+  author={Horro, Marcos and Rodríguez, Gabriel and Touriño, Juan and Kandemir, Mahmut T},
+  year={2017},
+  publisher={13th International Summer School on Advanced Computer Architecture and Compilation for High-Performance and Embedded Systems (ACACES)}
+},
+@inproceedings{horro2016exploracion,
+  title={Exploración y optimización energética de arquitecturas heterogéneas con el framework gem5},
+  author={Horro, Marcos and Rodríguez, Gabriel and Touriño, Juan},
+  booktitle={Actas Jornadas Sarteco},
+  pages={509--516},
+  year={2016}
+}
+@inproceedings{horroarchitectural,
+  title={Architectural exploration of heterogeneous memory systems},
+  author={Horro, Marcos and Rodríguez, Gabriel and Touriño, Juan and Kandemir, Mahmut T},
+  booktitle={19th workshop on Compiler for Parallel Computing},
+  pages={1--8},
+  year={2016}
+}
+@inproceedings{horromat,
+  title={Actividades na Ensinanza Secundaria. Experiencia dun alumno no caso concreto de modelización de focos luminosos},
+  author={Búa, Jose B. and Horro, Marcos},
+  booktitle={VI Congreso de AGAPEMA},
+  pages={1--1},
+  year={2012}
+}
+</pre>
+        </section>
+
+        <section id="service" class="mt-5">
+                  <h3 class="display-5">Services</h3>
+                  <hr>
+                  <h4>Course <span class="badge badge-secondary">2018/2019</span></h4>
+                  <ul class="clist">
+                    <li>Programación Integrativa <a
+        href="https://guiadocente.udc.es/guia_docent/index.php?centre=614&ensenyament=614G01&assignatura=614G01049&idioma=cast&any_academic=2018_19"
+        class="badge badge-info">Planning</a> <a href="https://moodle.udc.es/course/view.php?id=51658" class="badge
+        badge-primary">Moodle</a>
+        </li>
+                  </ul>
+        </section>
+        <br>
+
+      </div>
+    </div>
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-slim.min.js"><\/script>')</script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bibtex.js"></script>
+<script type="text/javascript">
+ var init = function() {
+   bibtexify("#bibtex", "pubTable", {});
+ };
+ if (window.addEventListener) {
+   window.addEventListener('load', init, false);
+ } else if (window.attachEvent) {
+   window.attachEvent('onload', init);
+ }
+</script>
+<script>
+jQuery("#pubTable").on("click", "a", function(e) {
+  var $n = jQuery(this),
+      text = $n.text().toUpperCase();
+  if (text === "X") { return; }
+  try {
+    _gaq.push(['_trackEvent', "PublicationAction", text]);
+} catch(err){ }
+  if ($n.attr("href") !== "#") {
+    setTimeout(function() {
+      document.location.href = $n.attr("href");
+    }, 100);
+    return false;
+  }
+});
+</script>
+<script>
+        includeHTML();
+</script>
+
+  </body>
+</html>
