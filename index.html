@@ -5,6 +5,7 @@
  - Last Modified Date: Nov 19 2019 
 -->
 <html lang="en">
+
     <script>
     function includeHTML() {
       var z, i, elmnt, file, xhttp;
@@ -36,6 +37,16 @@
     </script>
     
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153074899-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-153074899-1');
+    </script>
+      
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Página personal Marcos Horro - Grupo de Arquitectura de Computadores (GAC)">
@@ -85,7 +96,7 @@
         <hr>
         <p class="text-center text-monospace"><b>Office: </b>Sherrerd Hall 113<br>
         </p>
-        <p class="text-center text-monospace"><b>Phone: </b>609-258-5373<br>
+        <p class="text-center text-monospace"><b>Phone: </b>609-258-4352<br>
         </p>
         <hr>
         <p class="text-center"> If you are a human, please feel free to contact me.<br>
@@ -130,46 +141,46 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bibtex.js"></script>
-<script type="text/javascript">
- var init = function() {
-   bibtexify("#bibtex", "pubTable", {});
- };
- if (window.addEventListener) {
-   window.addEventListener('load', init, false);
- } else if (window.attachEvent) {
-   window.attachEvent('onload', init);
- }
-</script>
-<script>
-jQuery("#pubTable").on("click", "a", function(e) {
-  var $n = jQuery(this),
-      text = $n.text().toUpperCase();
-  if (text === "X") { return; }
-  try {
-    _gaq.push(['_trackEvent', "PublicationAction", text]);
-} catch(err){ }
-  if ($n.attr("href") !== "#") {
-    setTimeout(function() {
-      document.location.href = $n.attr("href");
-    }, 100);
-    return false;
-  }
-});
-</script>
-<script>
-        includeHTML();
-</script>
-<script>
-$(document).ready(function() {
-    $( ".mr-auto .nav-item" ).bind( "click", function(event) {
-        event.preventDefault();
-        var clickedItem = $( this );
-        $( ".mr-auto .nav-item" ).each( function() {
-            $( this ).removeClass( "active" );
-        });
-        clickedItem.addClass( "active" );
+    <script type="text/javascript">
+     var init = function() {
+       bibtexify("#bibtex", "pubTable", {});
+     };
+     if (window.addEventListener) {
+       window.addEventListener('load', init, false);
+     } else if (window.attachEvent) {
+       window.attachEvent('onload', init);
+     }
+    </script>
+    <script>
+    jQuery("#pubTable").on("click", "a", function(e) {
+      var $n = jQuery(this),
+          text = $n.text().toUpperCase();
+      if (text === "X") { return; }
+      try {
+        _gaq.push(['_trackEvent', "PublicationAction", text]);
+    } catch(err){ }
+      if ($n.attr("href") !== "#") {
+        setTimeout(function() {
+          document.location.href = $n.attr("href");
+        }, 100);
+        return false;
+      }
     });
-});
-</script>
+    </script>
+    <script>
+            includeHTML();
+    </script>
+    <script>
+    $(document).ready(function() {
+        $( ".mr-auto .nav-item" ).bind( "click", function(event) {
+            event.preventDefault();
+            var clickedItem = $( this );
+            $( ".mr-auto .nav-item" ).each( function() {
+                $( this ).removeClass( "active" );
+            });
+            clickedItem.addClass( "active" );
+        });
+    });
+    </script>
   </body>
 </html>

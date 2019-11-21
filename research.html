@@ -5,6 +5,7 @@
  - Last Modified Date: Nov 19 2019 
 -->
 <html lang="en">
+
     <script>
     function includeHTML() {
       var z, i, elmnt, file, xhttp;
@@ -36,6 +37,16 @@
     </script>
     
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153074899-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-153074899-1');
+    </script>
+      
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Página personal Marcos Horro - Grupo de Arquitectura de Computadores (GAC)">
@@ -81,11 +92,11 @@
           <h3 class="display-5">Technical Program Committee Membership</h3><hr>
           <ul class="timelinelist">
             <li><a href="https://icc2020.ieee-icc.org/workshop/ws-14-workshop-edge-machine-learning-5g-mobile-networks-and-beyond">Workshop on Edge Machine Learning for 5G Mobile Networks and Beyond</a> - June 7-11th, 2020, Dublin, Ireland <span class="badge badge-primary">Workshop</span></li>
-            <li><a href="http://icacci-conference.org/2018/wci-home"> Women in Computing and Informatics </a>, September 19-22nd, 2018, Bangalore, India <span class="badge badge-success">conference</span></li>
-            <li><a href="http://www.acn-conference.org/sirs2017/">International Symposium on Signal Processing and Intelligent Recognition Systems </a>, September 13-16th, 2017, Karnataka, India <span class="badge badge-pill badge-success">conference</span></li>
-            <li><a href="https://icc2017.ieee-icc.org/">IEEE International Conference on Communications - Cognitive Radio Networks </a>, June 21-25th, 2017, Paris, France <span class="badge badge-success">conference</span></li>
-            <li><a href="http://www.unet-conf.org/UNet2016/">International Symposium on Ubiquitous Networking </a>, May 30-June 1st, 2016, Casablanca, Morocco <span class="badge badge-pill badge-success">conference</span></li>
-            <li><a href="http://archive.gamenets.org/2016/show/home">EAI International Conference on Game Theory for Networks </a>, May 11-12th, 2016, Kelowna, BC, Canada <span class="badge badge-pill badge-success">conference</span></li>
+            <li><a href="http://icacci-conference.org/2018/wci-home"> Women in Computing and Informatics</a>, September 19-22nd, 2018, Bangalore, India <span class="badge badge-success">conference</span></li>
+            <li><a href="http://www.acn-conference.org/sirs2017/">International Symposium on Signal Processing and Intelligent Recognition Systems</a>, September 13-16th, 2017, Karnataka, India <span class="badge badge-pill badge-success">conference</span></li>
+            <li><a href="https://icc2017.ieee-icc.org/">IEEE International Conference on Communications - Cognitive Radio Networks</a>, June 21-25th, 2017, Paris, France <span class="badge badge-success">conference</span></li>
+            <li><a href="http://www.unet-conf.org/UNet2016/">International Symposium on Ubiquitous Networking</a>, May 30-June 1st, 2016, Casablanca, Morocco <span class="badge badge-pill badge-success">conference</span></li>
+            <li><a href="http://archive.gamenets.org/2016/show/home">EAI International Conference on Game Theory for Networks</a>, May 11-12th, 2016, Kelowna, BC, Canada <span class="badge badge-pill badge-success">conference</span></li>
             <li><a href="http://www.cwc.oulu.fi/smallnets2015/">IEEE ICC 2015 International Workshop on Small Cell and 5G Networks (SmallNets)</a>, June 8-12nd 2015, London, UK <span class="badge badge-primary">workshop</span></li>
               <li><a href="https://www.itsoc.org/conferences/submit/globalsip-2014-ieee-global-conference-on-signal-and-information-processing">IEEE Global Conference on Signal and Information Processing (GlobalSIP)</a>, December 3-5th 2014, Atlanta, GA, USA <span class="badge badge-success">conference</span></li>
           </ul>
@@ -139,35 +150,35 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bibtex.js"></script>
-<script type="text/javascript">
- var init = function() {
-   bibtexify("#bibtex", "pubTable", {});
- };
- if (window.addEventListener) {
-   window.addEventListener('load', init, false);
- } else if (window.attachEvent) {
-   window.attachEvent('onload', init);
- }
-</script>
-<script>
-jQuery("#pubTable").on("click", "a", function(e) {
-  var $n = jQuery(this),
-      text = $n.text().toUpperCase();
-  if (text === "X") { return; }
-  try {
-    _gaq.push(['_trackEvent', "PublicationAction", text]);
-} catch(err){ }
-  if ($n.attr("href") !== "#") {
-    setTimeout(function() {
-      document.location.href = $n.attr("href");
-    }, 100);
-    return false;
-  }
-});
-</script>
-<script>
-        includeHTML();
-</script>
+    <script type="text/javascript">
+     var init = function() {
+       bibtexify("#bibtex", "pubTable", {});
+     };
+     if (window.addEventListener) {
+       window.addEventListener('load', init, false);
+     } else if (window.attachEvent) {
+       window.attachEvent('onload', init);
+     }
+    </script>
+    <script>
+    jQuery("#pubTable").on("click", "a", function(e) {
+      var $n = jQuery(this),
+          text = $n.text().toUpperCase();
+      if (text === "X") { return; }
+      try {
+        _gaq.push(['_trackEvent', "PublicationAction", text]);
+    } catch(err){ }
+      if ($n.attr("href") !== "#") {
+        setTimeout(function() {
+          document.location.href = $n.attr("href");
+        }, 100);
+        return false;
+      }
+    });
+    </script>
+    <script>
+            includeHTML();
+    </script>
 
   </body>
 </html>

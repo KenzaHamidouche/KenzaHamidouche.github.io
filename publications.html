@@ -5,6 +5,7 @@
  - Last Modified Date: Nov 19 2019 
 -->
 <html lang="en">
+
     <script>
     function includeHTML() {
       var z, i, elmnt, file, xhttp;
@@ -38,6 +39,16 @@
     <script src="bib-list-min.js"></script>
     
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153074899-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-153074899-1');
+    </script>
+      
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Página personal Marcos Horro - Grupo de Arquitectura de Computadores (GAC)">
@@ -131,35 +142,35 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bibtex.js"></script>
-<script type="text/javascript">
- var init = function() {
-   bibtexify("#bibtex", "pubTable", {});
- };
- if (window.addEventListener) {
-   window.addEventListener('load', init, false);
- } else if (window.attachEvent) {
-   window.attachEvent('onload', init);
- }
-</script>
-<script>
-jQuery("#pubTable").on("click", "a", function(e) {
-  var $n = jQuery(this),
-      text = $n.text().toUpperCase();
-  if (text === "X") { return; }
-  try {
-    _gaq.push(['_trackEvent', "PublicationAction", text]);
-} catch(err){ }
-  if ($n.attr("href") !== "#") {
-    setTimeout(function() {
-      document.location.href = $n.attr("href");
-    }, 100);
-    return false;
-  }
-});
-</script>
-<script>
-        includeHTML();
-</script>
+    <script type="text/javascript">
+     var init = function() {
+       bibtexify("#bibtex", "pubTable", {});
+     };
+     if (window.addEventListener) {
+       window.addEventListener('load', init, false);
+     } else if (window.attachEvent) {
+       window.attachEvent('onload', init);
+     }
+    </script>
+    <script>
+    jQuery("#pubTable").on("click", "a", function(e) {
+      var $n = jQuery(this),
+          text = $n.text().toUpperCase();
+      if (text === "X") { return; }
+      try {
+        _gaq.push(['_trackEvent', "PublicationAction", text]);
+    } catch(err){ }
+      if ($n.attr("href") !== "#") {
+        setTimeout(function() {
+          document.location.href = $n.attr("href");
+        }, 100);
+        return false;
+      }
+    });
+    </script>
+    <script>
+            includeHTML();
+    </script>
 
   </body>
 </html>
